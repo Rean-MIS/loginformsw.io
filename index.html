@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Xong Ti</title>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <img src="/IMG/logo.png" class="logo">
+            <!-- <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Internship</a></li>
+                <li><a href="#">Academic</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul> -->
+            <button class="btn" id="open"><span></span>Log In</button>
+            
+        </div>
+    </div>
+    <div class="popup-form" id="login-form">
+
+        <div class="left">
+            <img src="../IMG/lock.png" alt="" width="100%">
+            
+        </div>
+        <div class="right">
+            <h2>Login</h2>
+            <p></p>
+            <div class="form">
+                <div class="input">
+                    <label for="email">Email</label>
+                    <div class="inputbox">
+                        <input type="text" required id="email">
+                        <span>Enter Your Email</span>
+                    </div>
+                    <label for="password">Password</label>
+                    <div class="inputbox">
+                        <input type="password" required id="password">
+                        <span>Enter Your Password</span>
+                    </div>
+                    
+                    
+                    <div class="button">
+                        <button>
+                          
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>Log In
+
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <p> &nbsp;</p>
+        </div>
+        <p class>Don't have account? &nbsp;<a href="#" class="signup">Sign up</a></p>
+        
+        <button class="close-bn">&times;</button>
+    </div>
+
+    <div class="popup-form" id="signup-form">
+
+        <div class="left">
+            <img src="../IMG/lock.png" alt="" width="100%">
+            
+        </div>
+        <div class="right">
+            <h2> Sign Up</h2>
+            <p></p>
+            <div class="form">
+                <div class="input">
+                    <label for="email">Email</label>
+                    <div class="inputbox">
+                        <input type="text" required id="email">
+                        <span>Enter Your Email</span>
+                    </div>
+                    <label for="password">Password</label>
+                    <div class="inputbox">
+                        <input type="password" required id="password">
+                        <span>Enter Your Password</span>
+                    </div>
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="inputbox">
+                        <input type="password" required id="comfirm-password">
+                        <span>Confirm Your Password</span>
+                    </div>
+                    <div class="button">
+                        <button>
+                          
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>Sign Up
+
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <p> &nbsp;</p>
+        </div>
+        <p class>Already have account! &nbsp;<a href="#" class="signup" id="goto-login">Log in</a></p>
+        
+        <button class="close-bn" id="close-signup">&larr;</button>
+    </div>
+    <script src="./JS/java.js"></script>
+    <script src="./JS/login.js"></script>
+</body>
+</html>

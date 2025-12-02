@@ -1,0 +1,361 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: verdana;
+}
+body{
+    background:url("../IMG/bg1.gif") no-repeat;
+    background-size:cover;
+}
+.header{
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-position:center;
+    
+}
+.navbar{
+    width:95%;
+    display:flex;
+    padding:10px 0;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+}
+.logo{
+    width: 230px;
+    cursor:pointer;
+    margin-left:100px;
+}
+.navbar ul li{
+    list-style: none;
+    display:inline-block;
+    margin:0 25px;
+    position:relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:White;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content:'';
+    height:3px;
+    width:0;
+    background:#00a44a;
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    transition:0.5s;
+}
+.navbar ul li:hover::after{
+    width:100%;
+}
+/*button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #fff;
+    cursor:pointer;
+    background:transparent;
+    position:relative;
+    overflow: hidden;    
+}
+span{
+    background:#fff;
+    height: 100%;
+    width:0;
+    border-radius: 25px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    z-index:-1;
+    transition: 0.5s;
+}
+button:hover span{
+    width:100%;
+}
+button:hover{
+    border:none;
+    color:#fff;
+}*/
+.navbar .btn{
+    background:transparent;
+    text-align: center;
+    position:relative;
+    border:2px solid#00a44a;
+    padding:5px 10px;
+    border-radius: 10px;
+    cursor:pointer;
+    overflow: hidden;
+    font-size:18px;
+    margin-right:100px;
+    outline:none;
+    color:white;
+}
+.navbar .btn span{
+    background:#00a44a;
+    height: 100%;
+    width:0;
+    outline:none;
+    position:absolute;
+    left:0;
+    bottom:0;
+    z-index:-1;
+    transition: 0.5s;
+    border-color:#00a44a;
+}
+.navbar .btn:hover span{
+    width:100%;
+}
+.navbar.btn:hover{
+    color:#fff;
+}
+/*Popup-FormLogin*/
+
+/*PopUp*/
+.popup-form{
+    color:#fff;
+    position:fixed;
+    top:-100%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(1.15);
+    width:calc(100%-20px);
+    max-width:650px;
+    background:#001632;
+    border-radius:20px;
+    display:grid;
+    gap:10px;
+    padding:50px 40px 40px;
+
+    box-shadow:0px 2px 2px 2px rgba(0,0,0,0.05);
+    z-index:2;
+    opacity:0;
+    transition:top 0ms ease-in-out 300ms,
+                   transform 300ms ease-in-out 0ms,
+                   opacity 300ms ease-in-out 0ms;
+}
+.popup-form.active{
+    top:50%;
+    transform:translate(-50%,-50%) scale(1);
+    opacity:1;
+    transition:top 0ms ease-in-out 0ms,
+                   transform 300ms ease-in-out 0ms,
+                   opacity 300ms ease-in-out 0ms;
+}
+.popup-form .close-bn{
+    position:absolute;
+    top:10px;
+    right:10px;
+    padding:5px;
+    font-size:18px;
+    color:#fff;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+}
+.popup-form .left{
+    display:flex;
+    align-items: center;
+    margin-right:25px;
+}
+
+.popup-form .right h2{
+    font-size:28px;
+    font-family: "Montserrat",sans-serif;
+    line-height:1.15;
+    margin-bottom: 10px;
+    color:#fff;
+    justify-content: center;
+    display: flex;
+}
+.popup-form .right p{
+    font-size:16px;
+    color:#555;
+    margin-bottom:15px;
+}
+.popup-form .right .form label{
+    display:block;
+    margin-bottom:10px;
+    font-size:15px;
+    margin-top:7px;
+}
+.popup-form .right .form .input{
+    margin-bottom:20px;
+}
+.inputbox{
+    position: relative;
+    width:250px;
+}
+.inputbox input{
+    width:100%;
+    padding:10px;
+    border:1px solid rgba(255,255,255,0.25);
+    background:transparent;
+    outline:none;
+    color:#fff;
+    font-size:1em;
+    border-radius: 5px;
+    transition:0.25s;
+}
+.inputbox span{
+    position:absolute;
+    left:0;
+    top:0;
+    padding:12px;
+    pointer-events: none;
+    font-size:0.70em;
+    color:rgba(255,255,255,0.25);
+    text-transform: uppercase;
+    transition:0.25s;
+}
+.inputbox input:valid ~ span,
+.inputbox input:focus ~span{
+    color:#00dfc4;
+    transform:translateX(10px) translateY(-7px);
+    font-size:0.65em;
+    padding:0 10px;
+    background:#001632;
+    border-left: 1px solid #00dfc4;
+    border-right:1px solid #00dfc4;
+    letter-spacing: 0.2em;
+}
+.inputbox input:valid,
+.inputbox input:focus{
+    border:1px solid #00dfc4;
+}
+
+@media(min-width:680px){
+    .popup-form{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+/*Button Style*/
+
+.popup-form .right .form button{
+    margin-top:15px;
+    width:270px;
+    padding:10px;
+    font-size:15px;
+    background:transparent;
+    border:none;
+    outline:none;
+    cursor:pointer;
+
+    box-shadow:0px 2px 2px #ddd;
+
+
+    position:absolute;
+
+    color:#34ffea;
+    overflow: hidden;
+
+    font-size:18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 20px 50px rgb(255 255 255 / 5%);
+}
+.popup-form .right .form button:before{
+    position:absolute;
+    width: 100%;
+    top:2px;
+    left:2px;
+    bottom:2px;
+    content:'';
+}
+.popup-form .right .form button span:nth-child(1){
+    position:absolute;
+    width:100%;
+    height:3px;
+    top:0;
+    left:0;
+    background:linear-gradient(to right,#002b9d, #34ffea);
+    animation: animate1 2s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+.popup-form .right .form button span:nth-child(2){
+    position:absolute;
+    top:0;
+    right:0;
+    width: 3px;
+    height:100%;
+    background: linear-gradient(to bottom, #002b9d, #34ffea);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate2{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+.popup-form .right .form button span:nth-child(3){
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:linear-gradient(to left, #002b9d,#34ffea);
+    animation: animate3 2s linear infinite;
+}
+@keyframes animate3{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+.popup-form .right .form button span:nth-child(4){
+    position: absolute;
+    top:0;
+    left:0;
+    width:3px;
+    height:100%;
+    background:linear-gradient(to top, #002b9d,#34ffea);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate4{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+/*Sign up*/
+.signup{
+    color:#fff;
+    position:relative;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.signup::after{
+
+    content:'';
+    position:absolute;
+    width:0;
+    background:#34ffea;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    transition: 0.5s;
+}
+.signup:hover::after{
+    text-decoration: none;
+    width:100%;
+}
+
